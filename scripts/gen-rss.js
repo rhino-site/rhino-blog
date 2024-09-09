@@ -17,7 +17,7 @@ async function generate() {
       if (name.startsWith('index.')) return
 
       const content = await fs.readFile(
-        path.join(__dirname, '..', 'pages', 'posts', name)
+        path.join(__dirname, '..', 'pages', name)
       )
       const frontmatter = matter(content)
 
