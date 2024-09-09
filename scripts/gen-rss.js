@@ -10,7 +10,7 @@ async function generate() {
     feed_url: 'https://blog.rhinolinux.org/feed.xml'
   })
 
-  const posts = await fs.readdir(path.join(__dirname, '..', 'pages', 'posts'))
+  const posts = await fs.readdir(path.join(__dirname, '..', 'pages'))
   const allPosts = []
   await Promise.all(
     posts.map(async (name) => {
@@ -23,10 +23,9 @@ async function generate() {
 
       allPosts.push({
         title: frontmatter.data.title,
-        url: '/posts/' + name.replace(/\.mdx?/, ''),
+        url: '/' + name.replace(/\.mdx?/, ''),
         date: frontmatter.data.date,
         description: frontmatter.data.description,
-        categories: frontmatter.data.tag.split(', '),
         author: frontmatter.data.author
       })
     })
