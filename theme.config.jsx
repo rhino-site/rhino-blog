@@ -1,5 +1,5 @@
 export default {
-  footer: <p class="nx-mt-32 nx-block">Rhino Linux Blog</p>,
+  footer: <p className="nx-mt-32 nx-block">Rhino Linux Blog</p>,
   head: ({ title, meta }) => (
     <>
       {meta.description && (
