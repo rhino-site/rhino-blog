@@ -1,0 +1,63 @@
+---
+title: Rhino Linux 2024.1 + more
+date: 2024/05/28
+description: After a substantially longer than anticipated development period, we're excited be back and provide our first release of the year.
+author: Rhino Linux Team
+---
+
+# Rhino Linux 2024.1
+
+After a substantially longer than anticipated development period, we're happy to provide our first release of the year, as well as an update on the discussions regarding Rhino Linux's development goals and structure.
+
+## Development Update
+
+Before we get into information about this release, we have a brief update about our organizational structure. As we mentioned [a while ago](news-11), developer burnout hit a breaking point for some us, and in consequence development has somewhat stagnated. We have begun discussions about how we wish to structure Rhino Linux going forward, and are happy to announce that we have currently drafted a working Rhino Linux constitution, with a hard focus on community involvement. These structural changes will begin to come into effect shortly after this release, so stay tuned for the full announcement!
+
+If you wish to be a part of our upcoming community-led initiative, then consider joining us on[our Discord](https://rhinolinux.org/contact.html).
+
+Aside from a stagnation in development due to burnout, this release has also been delayed by the enormous amount of changes that have occured to Ubuntu's codebase over the last several months. From [forced snap-related patches in vital audio software](https://changelogs.ubuntu.com/changelogs/pool/main/p/pipewire/pipewire_1.0.6-1build1/changelog), to the [64-bit time shift](https://wiki.debian.org/ReleaseGoals/64bit-time), to the [xz utils backdoor](news-12.html), to a surprisingly substantial, in-progress update to XFCE4's codebase, the `devel` branch has taken several bumps. For short term cases, we were able to provide rapid fixes through Pacstall that were not addressed by upstream immediately. All critical errors have now been fixed. While some minor issues persist with Unicorn (which is based on XFCE4), we felt it more pertinent to release this long overdue update than to wait any longer. Any remaining issues are described below.
+
+# Release Notes
+
+To upgrade to 2024.1 please run:
+`rpk update -y`
+
+Our main highlights for 2024.1 are Pacstall's 5.0.0+ releases, so please be sure to check out the provided release notes and updated wiki down below. Joint members of the Rhino Linux and Pacstall teams have been working hard over the last several months on these releases, and we are very excited about the development potential that they hold.
+
+## Known Issues:
+
+• In the live boot of our ISOs, desktop icons are not appearing at the start (these issues do *not* persist after installation). To launch Calamares installer for Rhino Linux, you can simply select "Install Rhino Linux" from the App Grid.
+
+• Alternatively, if you really want to launch Calamares from the desktop icon, you can do so in a convoluted way: right click the desktop and select "Arrange desktop icons". Then, log out and log back in by clicking the icon in the top left corner (you will not need to enter a password). The desktop icon should now appear normally.
+
+• The global menu plugin in Unicorn's panel has been [experiencing sizing issues](https://gitlab.com/vala-panel-project/vala-panel-appmenu/-/issues/385) since the XFCE4 updates. We have temporarily mitigated these issues with the CSS block:
+```css
+.-vala-panel-appmenu-core > * { min-width: 1430px; }
+```
+in `~/.config/gtk-3.0/gtk.css` but this is not a one-size-fixes-all situation. If the panel appears to be bleeding off of the edge for you even after completing full installation, edit the file mentioned and change `1430px` until it fits your screen properly. You will have to log out and back in for the change to take effect.
+
+## Pacstall:
+
+Pacstall's 5.x.x series has released. This includes, but is not limitied to, massive updates to the `pacscript` format, significantly improved security features, and expanded testing capabilities.
+
+• `pacscripts` now have near complete `PKGBUILD` parity, meaning you can easily port packages from the AUR into Pacstall, given some dependency resolution. The Pacscript 101 wiki has also been hugely revamped for a more user friendly experience. [Take a look at it here](https://github.com/pacstall/pacstall/wiki/Pacscript-101) to see how to get started with new`pacscripts`and get familiar with the plethora of new features Pacstall has to offer with 5.0.0 and up.
+
+• Pacstall 5.0.0 also introduced the execution of`pacscript`functions inside of an isolated environment with `bwrap`. Potentially dangerous scripts are now locked down by giving the child processes read-only access to the system and isolating environment variables.
+
+• `pacstall-qa` is now built in to `pacstall` directly using the syntax `-Qa provider:user/repo#PR`.
+
+• Pacstall 5.0.0 and 5.1.0 introduced improved handling of multiple repositories, making it easier for you to keep packages in your own repositories up-to-date.
+
+• Pacstall 5.0.0 introduced `_arch` enhanced arrays to `pacscripts` and 5.1.0 brought in `_distro` enhanced arrays, improving the process for providing to various specific targets.
+
+There are far too many new features introduced to provide in this post, so we implore you to read the full Pacstall changelogs:
+
+• You can read the full Pacstall 5.0.0 changelog [here](https://github.com/pacstall/pacstall/releases/tag/5.0.0), and 5.1.0 [here](https://github.com/pacstall/pacstall/releases/tag/5.1.0).
+
+## Other new features
+
+• The installed kernels for this release are `6.9.1-generic` for desktop, `6.9.0-okpine` on Pine64 devices, and `6.8.0-raspi` for Raspberry Pi.
+
+• Package updates and small bug fixes.
+
+Many thanks from the Rhino Linux team.

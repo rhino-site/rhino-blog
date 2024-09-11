@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   const meta = {
-    title: 'Rhino Linux',
+    title: 'Rhino Linux Blog',
     description: 'Ubuntu Based, Rolling Release',
     image: '/favicon.svg',
   }
