@@ -622,11 +622,18 @@ video {
 article {
   border-radius: 0.65em !important;
   padding: 1rem !important;
-  margin-top: 1rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
 }
 
-.nx-container {
-  width: 95vw !important;
+.nx-prose {
+  max-width: 95ch !important;
+}
+
+.nx-mt-24.nx-block {
+  margin-top: 2.5rem !important;
 }
 
 .nx-select-none.nx-rounded-md {
