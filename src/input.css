@@ -59,11 +59,16 @@
 article {
   @apply !nx-rounded-[0.65em];
   @apply !nx-p-4;
-  @apply !nx-mt-4;
+  @apply !nx-py-6;
+  @apply !nx-my-8;
 }
 
-.nx-container {
-  @apply !nx-w-[95vw];
+.nx-prose {
+ max-width: 95ch !important;
+}
+
+.nx-mt-24.nx-block {
+  @apply !nx-mt-10;
 }
 
 .nx-select-none.nx-rounded-md {
