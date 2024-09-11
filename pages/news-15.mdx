@@ -1,0 +1,75 @@
+---
+title: Rhino Linux 2024.2 - New Wiki, Theme, Containers, and so much more!
+date: 2024/09/01
+description: It's been a while since our last disk image release, and this one is packed full of some spectacular changes! Beyond just the distribution, we have also majorly revamped the Rhino Linux wiki. We are pleased to finally present 2024.2 to you!
+author: Rhino Linux Team
+---
+
+# Rhino Linux 2024.2: New Wiki, Theme, Containers, and so much more!
+
+It's been a while since our last disk image release, and this one is packed full of some spectacular changes! Beyond just the distribution, we have also majorly revamped the Rhino Linux wiki. We are pleased to finally present 2024.2 to you!
+
+We are currently looking for people to contribute to our wiki, if you are interested please join our [Discord](https://discord.gg/reSvc8Ztk37), or make a submission direction on [GitHub](https://github.com/rhino-site/rhino-linux-wiki)!
+
+# Release Notes
+
+To upgrade to 2024.2 please run:
+`rpk update -y`
+
+There are many great highlights of this release. Between both upgrading our distribution, as well as setting out our goals in our [last blog post](news-14), we have managed to combine all the best changes over the past few months into a stellar release.
+
+## New Unicorn Theme
+
+After a small period of stagnation, Unicorn has gotten a very nice upgrade. We now have a brand new GTK/XFWM4/Kvantum theme that Unicorn ships with, replacing our old Yaru-Purple scheme, giving the desktop an even more purple tint to it. Everything from the Rhino Linux installer, to the Rhino System application, to Thunar and XFCE4-Terminal will all be utilising this sparkly new theme. Applications now have much better visual integration and make your desktop much more vibrant!
+
+We are also currently looking for additional contributors to help continue designing the Unicorn icon theme (Unicons). If you are interested please join our [Discord](https://discord.gg/reSvc8Ztk3), and contribute to the [repository](https://github.com/rhino-linux/unicons) with any additional icons!
+
+## Setup Wizard overhaul
+
+Our Setup Wizard has just gotten a whole lot better, and we offer something for both regular and power users. We have added a signifcant number of containerization options, a new package manager, and even the option to add night shift. You can now select these additional options in the `rhino-setup` wizard:
+
+- Nix, the package manager (note: `rhino-pkg`/`rpk` does not currently support Nix).
+- Docker, for rapid containerization and development.
+- Podman, a daemon-less, drop-in replacement for Docker.
+- Flatseal, a GUI application for managing permissions on installed Flatpaks.
+- Distrobox, a program that uses Docker or Podman to deploy containers for other distributions on top of Rhino.
+- Apptainer, for developing smaller application containers.
+- VirtualBox, a GUI virtual machine application.
+- QEMU, a free and open source emulation backbone.
+- Redshift, adjust the color temperature of your screen according to your surroundings.
+
+## Pacstall Changes
+
+Pacstall has had two major versions release between Rhino Linux 2024.1 and 2024.2. With Pacstall being integral to Rhino Linux, as well as sharing developers between projects, we feel it's important to include information about their release as well.
+
+Pacstall's 5.3.x series introduced `pkgbase` splitting, a key feature from Arch's `makepkg`, that allows for the building of multiple individual packages from a single pacscript. You can read more about the feature [here](https://github.com/pacstall/pacstall/releases/tag/5.3.0).
+
+Pacstall's 5.4.x series introduced two new useful commands: `-Sd`/`--search-description`, which allows users to search for packages with their descriptions included in the output, and also searches through their descriptions for any keyword matches to the search entry; and `-Si`/`--search-info`, which will print out the `SRCINFO` data for any matching `pkgbase` or `pkgname`. This series also includes the addition of the `suggests` array as an alternative for `optdepends`. You can read more about the new features [here](https://github.com/pacstall/pacstall/releases/tag/5.4.0).
+
+In addition, as always, numerous bugs were squashed with these releases.
+
+## As well as...
+
+- We have fixed the issue with GRUB bootloader displaying "Ubuntu" instead of "Rhino"
+- Kernel verison `6.10.7` ships by default on Generic ISO disk images.
+- Kernel version `6.9.0-okpine` ships by default on Pine64 images.
+- Kernel version `6.8.0-raspi` ships by default on Raspberry Pi images.
+
+## Known Issues
+
+Both issues that we mentioned in [2024.1](news-13) unfortunately persist, but remain having simple workarounds.
+
+- For help with the issue regarding the desktop installation icon, see [here](https://wiki.rhinolinux.org/user/install/live).
+- For help with the issue regarding Unicorn's panel oversizing, see [here](https://wiki.rhinolinux.org/user/unicorn).
+
+## New Wiki + Additional Updates
+
+Built on [Nextra](https://nextra.site/), we have ported our documentation over to our [new community-oriented wiki](https://wiki.rhinolinux.org)! All pages previously available on our website's old wiki are now available here, as well as the documentation from Pacstall's wiki, bringing together all of our docs to one single source. This move to the new Rhino Linux wiki is a large step in the direction we are aiming for. As we outlined in our [previous blog post](news-14), we are making signifcant efforts in giving members of our community more power to contribute with ease. So long as you follow a markdown guide, you are able to contribute! All wiki pages have an option on the right side of the page to "Edit this page."
+
+Efforts are also underway to port our news blog to [Nextra](https://nextra.site/) as well. Progress also continues on the React rewrite of our main website.
+
+Finally, we are continuing working on further organisation of our development, creating a roadmap for the next few releases ahead, and expanding our team. Stay tuned for more announcements soon!
+
+Many thanks and happy rolling,
+
+The Rhino Linux Team.
