@@ -644,26 +644,8 @@ article {
 }
 
 :is(html[class~=dark] .nx-select-none.nx-rounded-md) {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(55 50 80 / var(--tw-bg-opacity)) !important;
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-:is(html[class~=dark] .post-item) {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(55 50 80 / var(--tw-bg-opacity)) !important;
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25) !important;
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color) !important;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-
-:is(html[class~=dark] article) {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(35 30 55 / var(--tw-bg-opacity)) !important;
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25) !important;
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color) !important;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
 :where(h3):not(:where([class~=nx-not-prose] *)) {
