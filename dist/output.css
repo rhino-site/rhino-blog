@@ -644,8 +644,15 @@ article {
 }
 
 :is(html[class~=dark] .nx-select-none.nx-rounded-md) {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(55 50 80 / var(--tw-bg-opacity)) !important;
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+:is(html[class~=dark] .post-item) {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(35 30 55 / var(--tw-bg-opacity)) !important;
 }
 
 :where(h3):not(:where([class~=nx-not-prose] *)) {

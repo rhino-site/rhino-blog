@@ -78,7 +78,12 @@ article {
 }
 
 :is(html[class~=dark] .nx-select-none.nx-rounded-md) {
+  @apply !nx-bg-site-200;
   @apply !nx-text-white;
+}
+ 
+:is(html[class~=dark] .post-item) {
+  @apply !nx-bg-site-300;
 }
 
 :where(h3):not(:where([class~=nx-not-prose] *)) {
